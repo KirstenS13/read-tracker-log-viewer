@@ -1,11 +1,21 @@
 import React from 'react';
 import Book from './Book';
 
-const BookList = () => {
+const BookList = props => {
     return (
         <>
             <h1>Books I've Read</h1>
-            <Book />
+            {props.bookList.map((book, index) => {
+                return (
+                    <Book
+                        key={index}
+                        title={book.title}
+                        author={book.author}
+                        pages={book.pages}
+                        dateCompleted={book.dateCompleted}
+                    />
+                )
+            })}
         </>
     )
 }

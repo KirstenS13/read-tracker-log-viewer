@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const BookForm = (props) => {
+const BookForm = props => {
     const [book, setBook] = useState({
         title: '',
         author: '',

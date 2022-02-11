@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Book = () => {
+const Book = props => {
     return (
         <>
-            <h3>Title: </h3>
-            <h4>Author: </h4>
-            <p>Pages: </p>
-            <p>Date Completed: </p>
+            <h3>Title: {props.title}</h3>
+            <h4>Author: {props.author}</h4>
+            <p>Pages: {props.pages}</p>
+            <p>Date Completed: {props.dateCompleted}</p>
         </>
     )
 }
