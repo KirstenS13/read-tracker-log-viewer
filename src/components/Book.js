@@ -1,12 +1,18 @@
 import React from 'react';
 
-const Book = () => {
+const Book = (props) => {
+    const sessions = props.book.sessions
+    const timestamp = sessions[sessions.length - 1].timestamp
+    // console.log(timestamp)
+    const dateCompleted = new Date(timestamp)
+    // console.log(dateCompleted)
+    
     return (
         <>
-            <h3>Title: </h3>
-            <h4>Author: </h4>
-            <p>Pages: </p>
-            <p>Date Completed: </p>
+            <h3>Title: {props.book.title}</h3>
+            <h4>Author: {props.book.author}</h4>
+            <p>Pages: {props.book.page_count}</p>
+            <p>Date Completed: {dateCompleted.toLocaleString()}</p>
         </>
     )
 }
