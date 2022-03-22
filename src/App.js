@@ -7,7 +7,7 @@ import BookForm from './components/BookForm';
 function App() {
   return (
     <div className="App">
-      <BookForm />
+      {/* <BookForm /> */}
       <BookList />
     </div>
   );
