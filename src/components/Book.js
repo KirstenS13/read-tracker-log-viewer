@@ -17,6 +17,8 @@ const Book = (props) => {
             <h4>Author: {props.book.author}</h4>
             <p>Pages: {props.book.page_count}</p>
             <p>Date Completed: {dateCompleted.toLocaleString()}</p>
+            <p>Total Reading Sessions: {props.book.sessions.length}</p>
+            <text>Thoughts: {props.book.closing_remark}</text>
         </>
     )
 }
