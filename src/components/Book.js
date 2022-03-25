@@ -6,23 +6,13 @@ const Book = (props) => {
     const dateCompleted = new Date(timestamp)
 
     // go through the sessions array for each book and find the total time spent reading the book
-
-    // props.book.sessions.reduce((previousTotal, object) => previousTotal + object.desired_value, initialValue)
     const totalReadingTimeInSeconds = props.book.sessions.reduce((total, session) => total + session.duration_seconds,0)
 
-    // wholeHours = the number of complete hours contained in the totalReadingTimeInSeconds
+    // convert the total reading time into whole numbers in hours minutes seconds format
     const wholeHours = Math.floor(totalReadingTimeInSeconds/3600)
-
-    // wholeHoursInSeconds = wholeHours converted to seconds
     const wholeHoursInSeconds = wholeHours * 3600
-
-    // wholeMinutes = the number of complete minutes contained in totalReadingTimeInSeconds - wholeHoursInSeconds
     const wholeMinutes = Math.floor((totalReadingTimeInSeconds - wholeHoursInSeconds) / 60)
-
-    // wholeMinutesInSeconds = wholeMinutes coverted to seconds
     const wholeMinutesInSeconds = wholeMinutes * 60
-    
-    // wholeSeconds = the number of seconds leftover after taking wholeHoursInSeconds and wholeMinutesInSeconds away from totalReadingTimeInSeconds
     const wholeSeconds = totalReadingTimeInSeconds - wholeHoursInSeconds - wholeMinutesInSeconds
 
     return (
