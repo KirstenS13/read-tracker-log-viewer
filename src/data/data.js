@@ -2377,7 +2377,7 @@ export const readingLog = {
         "page_count": 64,
         "current_position": 1,
         "current_position_timestamp": 1595727584562,
-        "closing_remark": "Super cute and funny. It was friggin adorable tbh. I love it a lot. The art was sooo fucking cute, I can't even",
+        "closing_remark": "Super cute and funny. It was adorable tbh. I love it a lot. The art was sooo cute, I can't even",
         "state": "Finished",
         "sessions": [
           {
@@ -2740,7 +2740,7 @@ export const readingLog = {
         "page_count": 64,
         "current_position": 1,
         "current_position_timestamp": 1599959138653,
-        "closing_remark": "What the fuck did I just read?",
+        "closing_remark": "What did I just read?",
         "state": "Finished",
         "sessions": [
           {
