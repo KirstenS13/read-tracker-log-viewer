@@ -1,6 +1,9 @@
 import React from 'react';
 
-const BookForm = () => {
+// we're going to use localStorage to store books
+// the BookForm component will add new books to localStorage
+
+const BookForm = props => {
     return (
         <>
             <form>

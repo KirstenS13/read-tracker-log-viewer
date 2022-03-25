@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Book = (props) => {
+const Book = props => {
     const sessions = props.book.sessions
     const timestamp = sessions[sessions.length - 1].timestamp
     const dateCompleted = new Date(timestamp)
