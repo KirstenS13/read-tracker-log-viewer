@@ -17,9 +17,21 @@ const BookForm = props => {
         console.log(newBook)
     };
 
+    const submitForm = e => {
+        e.preventDefault();
+        props.addNewBook(newBook);
+        setNewBook({
+            title: '',
+            author: '',
+            page_count: 0,
+            dateCompleted: new Date().toLocaleString(),
+            closing_remark: '',
+        });
+    };
+
     return (
         <>
-            <form>
+            <form onSubmit={submitForm}>
                 <label htmlFor='title'>Title: </label>
                 <input 
                     type='text'
@@ -52,6 +64,7 @@ const BookForm = props => {
                     value={newBook.dateCompleted}
                     onChange={handleChanges}
                 />
+                <button type='submit'>Add Book</button>
             </form>
         </>
     )
