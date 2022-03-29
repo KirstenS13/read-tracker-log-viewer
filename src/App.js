@@ -19,14 +19,26 @@ const useLocalStorage = (key, initialValue) => {
   };
 
   return [storedValue, setValue];
-}
+};
 
 function App() {
   const [readingLogState, setReadingLogState] = useState(readingLog.books);
 
+  // function to add newBook to readingLogState
+  const addNewBook = newBook => {
+    const bookToAdd = {
+      title: newBook.title,
+      author: newBook.author,
+      page_count: newBook.page_count,
+      dateCompleted: newBook.dateCompleted
+    };
+    
+    setReadingLogState([...readingLogState, bookToAdd]);
+  };
+  
   return (
     <div className="App">
-      <BookForm setReadingLogState={setReadingLogState} />
+      <BookForm addNewBook={addNewBook} />
       <BookList readingLogState={readingLogState} />
     </div>
   );
