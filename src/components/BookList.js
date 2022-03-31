@@ -1,20 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Book from './Book';
 
-import { readingLog } from '../data/data.js';
+// to use localStorage the readingLogState will need to be saved to localStorage as an array
+// the useEffect hook will need to be used to update the state whenever the localStorage changes
 
-const BookList = () => {
-    const [readingLogState, setReadingLogState] = useState(readingLog.books);
-
-    // checking to make sure the state set correctly
-    // console.log(readingLogState)
-
+const BookList = props => {
     return (
         <>
             <h1>Books I've Read</h1>
-            {readingLogState.map((book, index) => {
-                // checking to make sure the books are being mapped properly
-                // console.log(book.title)
+            {props.readingLogState.map((book, index) => {
                 return <Book key={index} book={book} />
             })}
         </>
