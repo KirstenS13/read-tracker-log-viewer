@@ -34,6 +34,8 @@ function App() {
     };
     
     setReadingLogState([...readingLogState, bookToAdd]);
+    
+    localStorage.setItem('readingLogBooks', JSON.stringify(readingLogState));
   };
   
   return (
