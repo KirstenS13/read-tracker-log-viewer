@@ -14,7 +14,6 @@ const BookForm = props => {
 
     const handleChanges = e => {
         setNewBook({...newBook, [e.target.name]: e.target.value});
-        console.log(newBook)
     };
 
     const submitForm = e => {
