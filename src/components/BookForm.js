@@ -5,10 +5,11 @@ import React, { useState } from 'react';
 
 const BookForm = props => {
     const [newBook, setNewBook] = useState({
+        id: Date.now(),
         title: '',
         author: '',
         page_count: 0,
-        dateCompleted: new Date().toLocaleString(),
+        date_completed: new Date().toLocaleString(),
         closing_remark: '',
     });
 
@@ -20,10 +21,11 @@ const BookForm = props => {
         e.preventDefault();
         props.addNewBook(newBook);
         setNewBook({
+            id: '',
             title: '',
             author: '',
             page_count: 0,
-            dateCompleted: new Date().toLocaleString(),
+            date_completed: new Date().toLocaleString(),
             closing_remark: '',
         });
     };
@@ -55,12 +57,20 @@ const BookForm = props => {
                     value={newBook.page_count}
                     onChange={handleChanges}
                 />
-                <label htmlFor='dateCompleted'>Date Completed: </label>
+                <label htmlFor='date_completed'>Date Completed: </label>
                 <input 
                     type='date'
-                    name='dateCompleted'
-                    id='dateCompleted'
-                    value={newBook.dateCompleted}
+                    name='date_completed'
+                    id='date_completed'
+                    value={newBook.date_completed}
+                    onChange={handleChanges}
+                />
+                <label htmlFor='closing_remark'>Thoughts: </label>
+                <input 
+                    type='text'
+                    name='closing_remark'
+                    id='closing_remark'
+                    value={newBook.closing_remark}
                     onChange={handleChanges}
                 />
                 <button type='submit'>Add Book</button>

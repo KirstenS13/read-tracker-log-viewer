@@ -8,8 +8,8 @@ const BookList = props => {
     return (
         <>
             <h1>Books I've Read</h1>
-            {props.readingLogState.map((book, index) => {
-                return <Book key={index} book={book} />
+            {props.readingLogState.map((book) => {
+                return <Book key={book.id} book={book} />
             })}
         </>
     )
