@@ -15,7 +15,8 @@ function App() {
       title: newBook.title,
       author: newBook.author,
       page_count: newBook.page_count,
-      date_completed: newBook.date_completed
+      date_completed: newBook.date_completed,
+      closing_remark: newBook.closing_remark
     };
     
     setReadingLogState([...readingLogState, bookToAdd]);

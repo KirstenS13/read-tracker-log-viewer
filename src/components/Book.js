@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Book = props => {
-    console.log("props.book.date_completed", props.book.date_completed)
+    console.log("props.book.closing_remark", props.book.closing_remark)
     return (
         <>
             <h3>Title: {props.book.title}</h3>

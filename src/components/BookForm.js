@@ -63,6 +63,14 @@ const BookForm = props => {
                     value={newBook.date_completed}
                     onChange={handleChanges}
                 />
+                <label htmlFor='closing_remark'>Thoughts: </label>
+                <input 
+                    type='text'
+                    name='closing_remark'
+                    id='closing_remark'
+                    value={newBook.closing_remark}
+                    onChange={handleChanges}
+                />
                 <button type='submit'>Add Book</button>
             </form>
         </>
