@@ -8,7 +8,7 @@ const BookForm = props => {
         title: '',
         author: '',
         page_count: 0,
-        dateCompleted: new Date().toLocaleString(),
+        date_completed: new Date().toLocaleString(),
         closing_remark: '',
     });
 
@@ -23,7 +23,7 @@ const BookForm = props => {
             title: '',
             author: '',
             page_count: 0,
-            dateCompleted: new Date().toLocaleString(),
+            date_completed: new Date().toLocaleString(),
             closing_remark: '',
         });
     };
@@ -55,12 +55,12 @@ const BookForm = props => {
                     value={newBook.page_count}
                     onChange={handleChanges}
                 />
-                <label htmlFor='dateCompleted'>Date Completed: </label>
+                <label htmlFor='date_completed'>Date Completed: </label>
                 <input 
                     type='date'
-                    name='dateCompleted'
-                    id='dateCompleted'
-                    value={newBook.dateCompleted}
+                    name='date_completed'
+                    id='date_completed'
+                    value={newBook.date_completed}
                     onChange={handleChanges}
                 />
                 <button type='submit'>Add Book</button>
