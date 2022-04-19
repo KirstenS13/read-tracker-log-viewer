@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 
 const BookForm = props => {
     const [newBook, setNewBook] = useState({
+        id: Date.now(),
         title: '',
         author: '',
         page_count: 0,
@@ -20,6 +21,7 @@ const BookForm = props => {
         e.preventDefault();
         props.addNewBook(newBook);
         setNewBook({
+            id: '',
             title: '',
             author: '',
             page_count: 0,

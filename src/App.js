@@ -12,6 +12,7 @@ function App() {
   // function to add newBook to readingLogState
   const addNewBook = newBook => {
     const bookToAdd = {
+      id: newBook.id,
       title: newBook.title,
       author: newBook.author,
       page_count: newBook.page_count,
