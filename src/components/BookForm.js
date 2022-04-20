@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 
 const BookForm = props => {
     const [newBook, setNewBook] = useState({
-        id: Date.now(),
+        id: '',
         title: '',
         author: '',
         page_count: 0,

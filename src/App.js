@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import './App.css';
 
 import BookList from './components/BookList';
@@ -12,7 +13,7 @@ function App() {
   // function to add newBook to readingLogState
   const addNewBook = newBook => {
     const bookToAdd = {
-      id: newBook.id,
+      id: uuidv4(),
       title: newBook.title,
       author: newBook.author,
       page_count: newBook.page_count,
@@ -23,12 +24,18 @@ function App() {
     setReadingLogState([...readingLogState, bookToAdd]);
   };
 
+  const deleteBook = id => {
+    const newReadingLogState = readingLogState.filter(book => book.id !== id);
+    setReadingLogState(newReadingLogState);
+    localStorage.setItem('readingLogBooks', JSON.stringify(readingLogState))
+  };
+
   localStorage.setItem('readingLogBooks', JSON.stringify(readingLogState));
   
   return (
     <div className="App">
       <BookForm addNewBook={addNewBook} />
-      <BookList readingLogState={readingLogState} />
+      <BookList readingLogState={readingLogState} deleteBook={deleteBook}/>
     </div>
   );
 }
