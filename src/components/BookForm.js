@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // we're going to use localStorage to store books
 // the BookForm component will add new books to localStorage
@@ -29,6 +29,10 @@ const BookForm = props => {
             closing_remark: '',
         });
     };
+
+    useEffect(() => {
+        setNewBook(props.bookToEdit)
+    }, [props.bookToEdit])
 
     return (
         <>

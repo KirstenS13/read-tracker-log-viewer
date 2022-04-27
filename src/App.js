@@ -9,6 +9,7 @@ import { readingLog } from './data/data.js';
 
 function App() {
   const [readingLogState, setReadingLogState] = useState(JSON.parse(localStorage.getItem('readingLogBooks') || '[]'));
+  const [bookToEdit, setBookToEdit] = useState([]);
 
   // function to add newBook to readingLogState
   const addNewBook = newBook => {
@@ -30,12 +31,19 @@ function App() {
     localStorage.setItem('readingLogBooks', JSON.stringify(readingLogState))
   };
 
+  const editBook = selectedBook => {
+    setBookToEdit(selectedBook);
+    console.log('selectedBook.id', selectedBook.id)
+    setReadingLogState(readingLogState.filter(book => book.id !== selectedBook.id))
+  }
+
   localStorage.setItem('readingLogBooks', JSON.stringify(readingLogState));
   
   return (
     <div className="App">
-      <BookForm addNewBook={addNewBook} />
-      <BookList readingLogState={readingLogState} deleteBook={deleteBook}/>
+      <BookForm addNewBook={addNewBook} bookToEdit={bookToEdit}/>
+      {console.log("bookToEdit", bookToEdit)}
+      <BookList readingLogState={readingLogState} deleteBook={deleteBook} editBook={editBook}/>
     </div>
   );
 }
