@@ -32,7 +32,7 @@ const BookForm = props => {
 
     return (
         <>
-            <form onSubmit={submitForm}>
+            <form className="mainContainer" onSubmit={submitForm}>
                 <label htmlFor='title'>Title: </label>
                 <input 
                     type='text'

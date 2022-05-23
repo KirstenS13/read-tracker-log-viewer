@@ -2,7 +2,7 @@ import React from 'react';
 
 const Book = props => {
     return (
-        <>
+        <div className="bookCard">
             <h3>Title: {props.book.title}</h3>
             <img 
                 src={props.book.cover_image_url}
@@ -13,7 +13,7 @@ const Book = props => {
             <p>Date Completed: {props.book.date_completed}</p>
             <p>Thoughts: {props.book.closing_remark}</p>
             <button onClick={() => props.deleteBook(props.book.id)}>Delete Book</button>
-        </>
+        </div>
     )
 
 }
