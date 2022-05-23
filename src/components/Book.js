@@ -4,10 +4,10 @@ const Book = props => {
     return (
         <div className="bookCard">
             <h3>Title: {props.book.title}</h3>
-            <img 
+            {props.book.cover_image_url ? <img 
                 src={props.book.cover_image_url}
                 alt="The book cover"
-            />
+            /> : null}
             <h4>Author: {props.book.author}</h4>
             <p>Pages: {props.book.page_count}</p>
             <p>Date Completed: {props.book.date_completed}</p>
