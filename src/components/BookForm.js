@@ -33,7 +33,8 @@ const BookForm = props => {
     return (
         <>
             <form className="mainContainer" onSubmit={submitForm}>
-                <div>
+                <h2>Add a New Book</h2>
+                <div className="formLine">
                     <label htmlFor='title'>Title: </label>
                     <input 
                         type='text'
@@ -43,7 +44,7 @@ const BookForm = props => {
                         onChange={handleChanges}
                         />
                 </div>
-                <div>
+                <div className="formLine">
                     <label htmlFor='author'>Author: </label>
                     <input 
                         type='text'
@@ -53,7 +54,7 @@ const BookForm = props => {
                         onChange={handleChanges}
                     />
                 </div>
-                <div>
+                <div className="formLine">
                     <label htmlFor='page_count'>Page Count: </label>
                     <input 
                         type='number'
@@ -63,7 +64,7 @@ const BookForm = props => {
                         onChange={handleChanges}
                     />
                 </div>
-                <div>
+                <div className="formLine">
                     <label htmlFor='date_completed'>Date Completed: </label>
                     <input 
                         type='date'
@@ -73,7 +74,7 @@ const BookForm = props => {
                         onChange={handleChanges}
                     />
                 </div>
-                <div>
+                <div className="formLine">
                     <label htmlFor='closing_remark'>Thoughts: </label>
                     <input 
                         type='text'
@@ -83,7 +84,7 @@ const BookForm = props => {
                         onChange={handleChanges}
                     />
                 </div>
-                <button type='submit'>Add Book</button>
+                <button className="formLine" type='submit'>Add Book</button>
             </form>
         </>
     )
