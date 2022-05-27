@@ -6,11 +6,13 @@ import Book from './Book';
 
 const BookList = props => {
     return (
-        <div>
+        <div className="second_section">
             <h1>Books I've Read</h1>
-            {props.readingLogState.map((book) => {
-                return <Book key={book.id} book={book} deleteBook={props.deleteBook}/>
-            })}
+            <div className="book_container">
+                {props.readingLogState.map((book) => {
+                    return <Book key={book.id} book={book} deleteBook={props.deleteBook}/>
+                })}
+            </div>
         </div>
     )
 }

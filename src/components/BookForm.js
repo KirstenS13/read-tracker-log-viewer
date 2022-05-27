@@ -31,9 +31,9 @@ const BookForm = props => {
     };
 
     return (
-        <form onSubmit={submitForm}>
+        <form className="first_section" onSubmit={submitForm}>
             <h2>Add a New Book</h2>
-            <div>
+            <div className="form_line">
                 <label htmlFor='title'>Title: </label>
                 <input 
                     type='text'
@@ -43,7 +43,7 @@ const BookForm = props => {
                     onChange={handleChanges}
                     />
             </div>
-            <div>
+            <div className="form_line">
                 <label htmlFor='author'>Author: </label>
                 <input 
                     type='text'
@@ -53,7 +53,7 @@ const BookForm = props => {
                     onChange={handleChanges}
                 />
             </div>
-            <div>
+            <div className="form_line">
                 <label htmlFor='page_count'>Page Count: </label>
                 <input 
                     type='number'
@@ -63,7 +63,7 @@ const BookForm = props => {
                     onChange={handleChanges}
                 />
             </div>
-            <div>
+            <div className="form_line">
                 <label htmlFor='date_completed'>Date Completed: </label>
                 <input 
                     type='date'
@@ -73,7 +73,7 @@ const BookForm = props => {
                     onChange={handleChanges}
                 />
             </div>
-            <div>
+            <div className="form_line">
                 <label htmlFor='closing_remark'>Thoughts: </label>
                 <input 
                     type='text'
