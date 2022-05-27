@@ -2,8 +2,8 @@ import React from 'react';
 
 const Book = props => {
     return (
-        <div className="bookCard">
-            <div className="cardInfo">
+        <div>
+            <div>
                 <div>
                     <h3>Title: {props.book.title}</h3>
                     {props.book.cover_image_url ? <img 
